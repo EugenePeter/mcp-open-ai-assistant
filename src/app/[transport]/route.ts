@@ -6,8 +6,6 @@ import semanticTokens from "../tokens-input/migration/semantic 1.json";
 import primitiveTokens from "../tokens-input/migration/primitive 1.json";
 import type { ChatCompletionTool } from "openai/resources/chat/completions";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 const handler = createMcpHandler(
   async (server) => {
     //@ts-ignore
@@ -23,28 +21,6 @@ const handler = createMcpHandler(
         };
       }
     );
-    server.tool(
-      "ask-openai",
-      "Ask a question to GPT",
-      {
-        prompt: z.string(),
-      },
-      async ({ prompt }) => {
-        const res = await openai.chat.completions.create({
-          model: "gpt-4",
-          messages: [{ role: "user", content: prompt }],
-        });
-        return {
-          content: [
-            {
-              type: "text",
-              text: res.choices[0]?.message?.content || "No response",
-            },
-          ],
-        };
-      }
-    );
-
     server.tool(
       "get_latest_ads_semantic_tokens",
       "Returns the latest semantic design tokens for ADS",
@@ -98,6 +74,7 @@ const handler = createMcpHandler(
         prompt: z.string(),
       },
       async ({ prompt }) => {
+        const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
         const tools: ChatCompletionTool[] = [
           {
             type: "function", // ✅ this now matches the expected literal type
