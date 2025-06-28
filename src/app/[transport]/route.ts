@@ -29,16 +29,9 @@ const handler = createMcpHandler(
         return {
           content: [
             {
-              type: "resource",
-              resource: {
-                uri:
-                  "data:application/json;base64," +
-                  Buffer.from(JSON.stringify(semanticTokens)).toString(
-                    "base64"
-                  ),
-                text: "Semantic Design Tokens",
-                mimeType: "application/json",
-              },
+              type: "text",
+              text:
+                "```json\n" + JSON.stringify(semanticTokens, null, 2) + "\n```",
             },
           ],
         };
@@ -52,21 +45,17 @@ const handler = createMcpHandler(
         return {
           content: [
             {
-              type: "resource",
-              resource: {
-                uri:
-                  "data:application/json;base64," +
-                  Buffer.from(JSON.stringify(primitiveTokens)).toString(
-                    "base64"
-                  ),
-                text: "Primitive Design Tokens",
-                mimeType: "application/json",
-              },
+              type: "text",
+              text:
+                "```json\n" +
+                JSON.stringify(primitiveTokens, null, 2) +
+                "\n```",
             },
           ],
         };
       }
     );
+
     server.tool(
       "ask-openai",
       "Ask a question about ADS tokens. OpenAI will decide which tool to call.",
