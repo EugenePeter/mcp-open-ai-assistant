@@ -1,0 +1,10 @@
+{
+  "shadow": {
+    "default": {
+      "value": "{core.shadow.100.value}"
+    },
+    "hover": {
+      "value": "{core.shadow.300.value}"
+    }
+  }
+}

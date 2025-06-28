@@ -1,0 +1,15 @@
+{
+  "border": {
+    "size": {
+      "lg": {
+        "value": "{core.border.size.lg.value}"
+      },
+      "md": {
+        "value": "{core.border.size.md.value}"
+      },
+      "sm": {
+        "value": "{core.border.size.sm.value}"
+      }
+    }
+  }
+}

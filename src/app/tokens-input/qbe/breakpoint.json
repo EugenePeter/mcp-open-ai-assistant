@@ -1,0 +1,35 @@
+{
+  "breakpoint": {
+    "gutter": {
+      "desktop": {
+        "value": "{core.breakpoint.gutter.md.value}"
+      },
+      "desktop-lg": {
+        "value": "{core.breakpoint.gutter.md.value}"
+      },
+      "mobile": {
+        "value": "{core.breakpoint.gutter.sm.value}"
+      },
+      "tablet": {
+        "value": "{core.breakpoint.gutter.md.value}"
+      }
+    },
+    "size": {
+      "lg": {
+        "value": "{core.breakpoint.size.lg.value}"
+      },
+      "md": {
+        "value": "{core.breakpoint.size.md.value}"
+      },
+      "sm": {
+        "value": "{core.breakpoint.size.sm.value}"
+      },
+      "xl": {
+        "value": "{core.breakpoint.size.xl.value}"
+      },
+      "xs": {
+        "value": "{core.breakpoint.size.xs.value}"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "spacing": {
+    "x1": {
+      "value": "{core.spacing.x1.value}"
+    },
+    "x10": {
+      "value": "{core.spacing.x10.value}"
+    },
+    "x12": {
+      "value": "{core.spacing.x12.value}"
+    },
+    "x15": {
+      "value": "{core.spacing.x15.value}"
+    },
+    "x2": {
+      "value": "{core.spacing.x2.value}"
+    },
+    "x20": {
+      "value": "{core.spacing.x20.value}"
+    },
+    "x3": {
+      "value": "{core.spacing.x3.value}"
+    },
+    "x30": {
+      "value": "{core.spacing.x30.value}"
+    },
+    "x4": {
+      "value": "{core.spacing.x4.value}"
+    },
+    "x5": {
+      "value": "{core.spacing.x5.value}"
+    },
+    "x6": {
+      "value": "{core.spacing.x6.value}"
+    },
+    "x7": {
+      "value": "{core.spacing.x7.value}"
+    },
+    "x8": {
+      "value": "{core.spacing.x8.value}"
+    }
+  }
+}
