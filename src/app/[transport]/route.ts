@@ -30,8 +30,7 @@ const handler = createMcpHandler(
           content: [
             {
               type: "text",
-              text:
-                "```json\n" + JSON.stringify(semanticTokens, null, 2) + "\n```",
+              text: "Echo tool triggered successfully!",
             },
           ],
         };
@@ -46,10 +45,7 @@ const handler = createMcpHandler(
           content: [
             {
               type: "text",
-              text:
-                "```json\n" +
-                JSON.stringify(primitiveTokens, null, 2) +
-                "\n```",
+              text: "Echo tool triggered successfully!",
             },
           ],
         };
