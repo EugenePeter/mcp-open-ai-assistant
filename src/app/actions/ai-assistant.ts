@@ -4,7 +4,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
-const origin = "https://mcp-ai-assistant.vercel.app";
+const origin = "https://mcp-open-ai-assistant.vercel.app";
 export async function askOpenAI(prompt?: string) {
   //   const transport = new StreamableHTTPClientTransport(
   //     new URL(`${process.env.MCP_SERVER_ORIGIN ?? "http://localhost:6020"}/mcp`)
