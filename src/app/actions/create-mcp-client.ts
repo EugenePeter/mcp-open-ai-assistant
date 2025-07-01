@@ -1,8 +1,11 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
-// You can extract origin from env later
-const MCP_ORIGIN = process.env.MCP_ORIGIN ?? "http://localhost:7020";
+const MCP_ORIGIN =
+  process.env.MCP_ORIGIN ||
+  (process.env.NODE_ENV === "production"
+    ? "https://mcp-open-ai-assistant.vercel.app"
+    : "http://localhost:7020");
 
 export async function createMcpClient() {
   const transport = new StreamableHTTPClientTransport(
