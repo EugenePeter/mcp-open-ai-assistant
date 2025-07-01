@@ -367,7 +367,7 @@ const handler = createMcpHandler(
     },
   },
   {
-    // redisUrl: process.env.REDIS_URL,
+    redisUrl: process.env.REDIS_URL,
     sseEndpoint: "/sse",
     streamableHttpEndpoint: "/mcp",
     basePath: "",
