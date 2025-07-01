@@ -4,13 +4,18 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
 import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
-const origin = "https://mcp-open-ai-assistant.vercel.app";
-export async function askOpenAI(prompt?: string) {
+const origin = "http://localhost:7020";
+// || "https://mcp-open-ai-assistant.vercel.app";
+export async function askOpenAI() {
   //   const transport = new StreamableHTTPClientTransport(
   //     new URL(`${process.env.MCP_SERVER_ORIGIN ?? "http://localhost:6020"}/mcp`)
   //   );
 
-  const transport = new SSEClientTransport(new URL(`${origin}/sse`));
+  // if (!prompt || typeof prompt !== "string" || prompt.trim() === "") {
+  //   throw new Error("Prompt must be a non-empty string.");
+  // }
+
+  const transport = new StreamableHTTPClientTransport(new URL(`${origin}/mcp`));
 
   const client = new Client(
     {
@@ -26,16 +31,18 @@ export async function askOpenAI(prompt?: string) {
     }
   );
 
-  await client.connect(transport);
+  return await client.connect(transport);
 
-  //@ts-ignore
-  //   const result = await client.callTool("echo", {});
-  const result = await client.listTools();
+  // const result = await client.callTool({
+  //   name: "ask-openai",
+  //   arguments: { prompt },
+  // });
 
-  console.log("PROMPT", prompt);
-  await client.close();
+  // console.log("PROMPT", prompt); // 🔧 Now actually call the `ask-openai` tool with the user input
+  // // const result = await client.callTool("ask-openai", { prompt });
+  // await client.close();
 
-  return result;
+  // return result;
   //   return result.map((tool) => tool.name).join(", ");
   //   return result?.content?.[0]?.text ?? "No response from agent";
 }

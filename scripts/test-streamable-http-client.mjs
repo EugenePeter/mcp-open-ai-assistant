@@ -22,6 +22,12 @@ async function main() {
 
   await client.connect(transport);
 
+  client.StreamableHTTPClientTransport;
+
+  client.notifications.on("connected", () => {
+    console.log("Client connected to MCP server");
+  });
+
   console.log("Connected", client.getServerCapabilities());
 
   const result = await client.listTools();
