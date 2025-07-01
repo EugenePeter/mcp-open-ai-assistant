@@ -114,6 +114,12 @@ export function ChatContent(props: ChatContentProps) {
             className="w-full border border-gray-300 p-2 rounded text-sm resize-none text-gray-700"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                onSubmit();
+              }
+            }}
           />
           <button
             onClick={onSubmit}

@@ -3,9 +3,10 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 
-import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
-const origin = "http://localhost:7020";
-// || "https://mcp-open-ai-assistant.vercel.app";
+// import { SSEClientTransport } from "@modelcontextprotocol/sdk/client/sse.js";
+const origin = process.env.MCP_ORIGIN ?? "http://localhost:7020";
+// const origin =  "https://mcp-open-ai-assistant.vercel.app";
+
 export async function askOpenAI() {
   //   const transport = new StreamableHTTPClientTransport(
   //     new URL(`${process.env.MCP_SERVER_ORIGIN ?? "http://localhost:6020"}/mcp`)

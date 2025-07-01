@@ -11,7 +11,7 @@ import { fetchJsonFromGitHub } from "../utils/fetch-json-from-repo";
 import { transformTheme } from "@/app/utils/ai-assitant-utils";
 
 import {
-  getCommitHistory,
+  // getCommitHistory,
   getFileDiff,
   getLastCommitInfo,
 } from "@/app/utils/analyse-token-changes";
